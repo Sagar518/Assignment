@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Laravel MS Word</title>
 </head>
 <body>
@@ -19,7 +19,9 @@
             <table class="table table-light table-bordered mt-5">
                 <thead>
                 <tr>
-                    <th scope="col" colspan="2">User's information</th>
+                    <th scope="col" colspan="2">User's information <a href="{{ url('users/word-export/' . $user->id) }}" class="btn btn-sm btn-info" style="position: relative;left:20px"><i class="fa fa-print" aria-hidden="true" ></i></a>
+                    </th>
+
                 </tr>
                 </thead>
                 <tbody>
@@ -39,7 +41,6 @@
                 </tbody>
             </table>
 
-            <a href="{{ url('users/word-export/' . $user->id) }}" class="btn btn-sm btn-primary">Export Word</a>
         </div>
     </div>
 </div>
