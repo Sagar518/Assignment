@@ -46,11 +46,17 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
         $templateProcessor = new TemplateProcessor('word-template/user.docx');
+        $templateProcessor->setValue('id', $user->id);
 
         $templateProcessor->setValue('firstname', $user->firstname);
         $templateProcessor->setValue('lastname', $user->lastname);
         $templateProcessor->setValue('email', $user->email);
-        $fileName = $user->name;
+        // $fileName = $user->name;
+        $fileName = $user->id;
+        $fileName = $user->firstname;
+        $fileName = $user->lastname;
+        $fileName = $user->email;
+
         $templateProcessor->saveAs($fileName . '.docx');
         return response()->download($fileName . '.docx')->deleteFileAfterSend(true);
     }

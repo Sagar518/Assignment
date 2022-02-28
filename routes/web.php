@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TodoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,7 @@ Route::get("edit/{id}",[UserController::class,'showData']);
 Route::post("editAction",[UserController::class,'update']);
 Route::get('users/{id}', [UserController::class,'showWord']);
 Route::get('users/word-export/{id}', [UserController::class,'wordExport']);
+
 
 
 require __DIR__.'/auth.php';
